@@ -16,7 +16,7 @@
     position: relative;
   }
 
-  /* Diferentes imagens por dispositivo */
+  /* Diferentes imagens de fundo por dispositivo */
   @media (min-width: 1025px) {
     .background { background-image: url('https://i.imgur.com/jDmb1mI.png'); }
   }
@@ -46,19 +46,27 @@
     pointer-events: auto;
   }
 
-  .affiliate-modal img {
+  /* Imagem clicável do modal */
+  #affiliateImage {
     width: 100%;
     border-radius: 10px;
     cursor: pointer;
+    content: url('https://i.imgur.com/MpBhkmo.png'); /* imagem desktop */
   }
 
+  /* Troca a imagem quando for celular */
+  @media (max-width: 767px) {
+    #affiliateImage {
+      content: url('https://i.imgur.com/LcdJpLw.png'); /* imagem mobile */
+    }
+  }
 </style>
 </head>
 <body>
 
 <div class="background">
 
-  <!-- Modal com imagem afiliado -->
+  <!-- Modal com imagem de afiliado -->
   <div class="affiliate-modal" id="affiliateModal">
     <img src="https://i.imgur.com/MpBhkmo.png" alt="OzenVitta" id="affiliateImage">
   </div>
@@ -82,4 +90,6 @@
 
 </body>
 </html>
+
+
 
